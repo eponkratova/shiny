@@ -2,6 +2,8 @@
 #install.packages("shiny")
 library(shiny)
 library(ggplot2)
+
+
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_4850/datasets/movies.Rdata"))
 
 # Define UI for application that plots features of movies
@@ -13,7 +15,8 @@ ui <- fluidPage(
     # Inputs
     sidebarPanel(
       
-      # Select variable for y-axis
+      # Select variable for y-axisdevtools:intall_github("rstudio/shinyapps")
+      
       selectInput(inputId = "y", 
                   label = "Y-axis:",
                   choices = c("imdb_rating", "imdb_num_votes", "critics_score", "audience_score", "runtime"), 
@@ -52,3 +55,5 @@ server <- function(input, output) {
 
 # Create a Shiny app object
 shinyApp(ui = ui, server = server)
+
+

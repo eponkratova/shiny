@@ -1,14 +1,26 @@
 install.packages("radarchart")
 library(radarchart)
 
-labs <- c("Communicator", "Data Wangler", "Programmer",
-          "Technologist",  "Modeller", "Visualizer")
+df <- read.csv("directory.csv")
+
+
+labs <- c("Real-time","Scalability","Maintenance","Publishing, sharing and collaborating","Degree of analysis",
+          "Customizability","Cost","Visual appeal"
+          )
 
 scores <- list(
-  "Rich" = c(9, 7, 4, 5, 3, 7),
-  "Andy" = c(7, 6, 6, 2, 6, 9),
-  "Aimee" = c(6, 5, 8, 4, 7, 6)
+  "Open.source.data.visualization...batch" =df$Open.source.data.visualization...batch,
+  "Economical.data.visualization...batch" = df$Economical.data.visualization...batch,
+  "Open.source.reporting...batch." = df$Open.source.reporting...batch.,
+  "Economical.data.visualization.with.high.interactivity...batch" =df$Economical.data.visualization.with.high.interactivity...batch,
+  "Open.source.advanced.analytics...batch" = df$Open.source.advanced.analytics...batch,
+  "Open.source.data.visualization...real.time" = df$Open.source.data.visualization...real.time
 )
 
-chartJSRadar(scores = scores, labs = labs, maxScale = 10)
 
+
+c <- grDevices::col2rgb(c("#790000","#B83200","#F96900","#F98632","#F9B17D","#FFD87A"))
+
+chartJSRadar(scores = scores, labs = labs, maxScale = 3, scaleStepWidth = 1, addDots = F, 
+             lineAlpha = 0, colMatrix = c
+             , labelSize = 15, main = "Tools comparison")

@@ -1,0 +1,10 @@
+name: r_shiny
+title:
+username:
+account: eka-catalyst-apps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 798832
+bundleId: 1949552
+url: https://eka-catalyst-apps.shinyapps.io/r_shiny/
+when: 1552978516.37889
